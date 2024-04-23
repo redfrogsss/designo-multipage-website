@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+body {
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: math.div(26, 16);
+}
+
+.fs-h1 {
+    font-size: rem(48);
+    font-weight: 500;
+    line-height: math.div(48, 48);
+}
+
+.fs-h2 {
+    font-size: rem(40);
+    font-weight: 500;
+    line-height: math.div(48, 40);
+    letter-spacing: rem(2);
+}
+
+.fs-h3 {
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: math.div(26, 20);
+    letter-spacing: rem(5);
+}
