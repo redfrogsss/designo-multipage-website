@@ -1,0 +1,72 @@
+@use 'sass:math';
+
+.navbar {
+    position: relative;
+    margin-block: rem(64);
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    &__left {
+        flex: 0 0 rem(202);
+    }
+
+    &__pic {
+        aspect-ratio: math.div(202, 27);
+    }
+
+    &__img {}
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        column-gap: rem(42);
+
+        @media (max-width: 767px) {
+            column-gap: rem(30);
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        font-size: rem(14);
+        font-weight: 400;
+        letter-spacing: rem(2);
+        display: block;
+
+        &--icon {
+            flex: 0 0 rem(24);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: em(8);
+
+            & span {
+                font-size: inherit;
+            }
+
+            & span::before {
+                font-size: inherit;
+            }
+        }
+
+        &--desktop {
+            @media (max-width: 640px) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            @media (min-width: 641px) {
+                display: none;
+            }
+        }
+
+    }
+}

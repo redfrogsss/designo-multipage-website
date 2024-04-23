@@ -25,3 +25,13 @@ body {
     line-height: math.div(26, 20);
     letter-spacing: rem(5);
 }
+
+.page-container {
+    max-width: rem(1111);
+    padding-inline: rem(40);
+    margin-inline: auto;
+
+    @media (max-width: 640px) {
+        padding-inline: rem(24);
+    }
+}
