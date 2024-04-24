@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./../styles/globals.scss";
 import NavBar from "@/components/navbar/NavBar";
+import Footer from "@/components/footer/Footer";
 
 const jost = Jost({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={jost.className}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,28 @@
+.btn {
+    border-radius: rem(8);
+    padding: em(18, 15) em(25, 15) em(16, 15) em(24, 15);
+    font-size: rem(15);
+    font-weight: 500;
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+
+    background-color: $color-peach;
+    color: $color-white;
+
+    transition: all .4s $transition;
+
+    &:hover, &:focus {
+        background-color: $color-light-peach;
+        color: $color-white;
+    }
+
+    &--dark {
+        background-color: $color-white;
+        color: $color-black;
+
+        &:hover, &:focus {
+            background-color: $color-light-peach;
+            color: $color-white;
+        }
+    }
+}

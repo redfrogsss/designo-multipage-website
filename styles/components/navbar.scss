@@ -114,7 +114,7 @@
                     height: rem(1);
                     background-color: $color-white;
 
-                    transition: width .4s cubic-bezier(0.76, 0, 0.24, 1);
+                    transition: width .4s $transition;
                 }
 
                 // &:hover,
