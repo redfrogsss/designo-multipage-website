@@ -1,20 +1,33 @@
 import Link from "next/link";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./NavBarMobileDropdown"
 
-export default function NavBar () {
+export default function NavBar() {
     return (
         <header className="navbar">
             <div className="page-container">
                 <div className="navbar__inner">
                     <div className="navbar__left">
                         <picture className="navbar__pic">
-                            <img src="/assets/shared/desktop/logo-dark.png" alt="DESIGNO Logo" className="navbar__img"/>
+                            <img src="/assets/shared/desktop/logo-dark.png" alt="DESIGNO Logo" className="navbar__img" />
                         </picture>
                     </div>
                     <div className="navbar__right">
                         <Link href="/about" className="navbar__link navbar__link--desktop">Our Company</Link>
                         <Link href="/about" className="navbar__link navbar__link--desktop">Location</Link>
                         <Link href="/about" className="navbar__link navbar__link--desktop">Contact</Link>
-                        <Link href="/about" className="navbar__link navbar__link--mobile navbar__link--icon"><span className="icon-icon-hamburger"></span></Link>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className="navbar__link navbar__link--mobile navbar__link--icon"><span className="icon-icon-hamburger"></span></DropdownMenuTrigger>
+                            <DropdownMenuContent className="navbar__dropdown">
+                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/about"><span>Our Company</span></Link></DropdownMenuItem>
+                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/location"><span>Locations</span></Link></DropdownMenuItem>
+                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/contact"><span>Contact</span></Link></DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
             </div>
