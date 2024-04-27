@@ -1,4 +1,5 @@
 import FooterBlock from "./FooterBlock";
+import FooterSection from "./FooterSection";
 
 export default function Footer () {
     return (
@@ -8,7 +9,9 @@ export default function Footer () {
                     <FooterBlock />
                 </div>
             </div>
-            <div className="footer__bottom"></div>
+            <div className="footer__bottom">
+                <FooterSection />
+            </div>
         </footer>
     );
 }
