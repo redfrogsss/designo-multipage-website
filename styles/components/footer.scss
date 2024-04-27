@@ -242,7 +242,7 @@
         }
 
         &:hover, &:focus {
-            --icon-color: #{darken($color-peach, 20)};
+            --icon-color: #{$color-light-peach};
         }
     }
 }
