@@ -1,6 +1,25 @@
 @use 'sass:math';
 
 .terms-grid {
+
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: vw(124, 1920);
+        right: 0;
+        width: vw(1006, 1920);
+        height: rem(594);
+        background-color: #F1F3F5;
+        z-index: -10;
+        border-radius: rem(297) 0 rem(297) rem(297);
+        
+        @media (max-width: 768px) {
+            content: unset;
+        }
+    }
+
     &__inner {
         display: flex;
         flex-direction: row;
