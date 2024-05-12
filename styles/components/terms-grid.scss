@@ -7,9 +7,9 @@
     &:before {
         content: "";
         position: absolute;
-        top: vw(124, 1920);
+        top: min(#{vw(124, 1440)}, #{rem(124)});
         right: 0;
-        width: vw(1006, 1920);
+        width: min(#{vw(1006, 1440)}, #{rem(1006)});
         height: rem(594);
         background-color: #F1F3F5;
         z-index: -10;
