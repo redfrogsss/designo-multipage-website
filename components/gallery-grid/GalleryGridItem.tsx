@@ -5,19 +5,22 @@ export default function GalleryGridItem(
         link = "#!",
         type = "normal",
         desktopImg = "/assets/home/desktop/image-web-design-large.jpg",
+        mobileImg,
         title = "Web Design"
     }: {
         link: string,
         type?: "normal" | "tall",
         desktopImg: string,
+        mobileImg?: string | undefined,
         title: string
     }
 ) {
     return (
         <a href={link} className={`gallery-grid-item ${type == "tall" ? "gallery-grid-item--tall" : ""}`}>
-            <div className="gallery-grid-item__pic-layer">
+            <picture className="gallery-grid-item__pic-layer">
+                {mobileImg && <source media="(max-width: 991px)" srcSet={mobileImg} />}
                 <Image src={desktopImg} alt="image web desktop large" fill={true} className="gallery-grid-item__pic" />
-            </div>
+            </picture>
             <div className="gallery-grid-item__text-layer">
                 <div className="gallery-grid-item__text-wrapper">
                     <span className="gallery-grid-item__title ">{title}</span>

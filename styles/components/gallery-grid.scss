@@ -1,11 +1,24 @@
 @use "sass:math";
 
 .gallery-grid {
-    --gap: #{rem(30)};
-    --grid-height: #{rem(308)};
-    --grid-height-tall: #{rem(640)};
+    --gap: min(#{vw(30, 1191)}, #{rem(30)});
+    --grid-height: min(#{vw(308, 1191)}, #{rem(308)});
+    --grid-height-tall: min(#{vw(640, 1191)}, #{rem(640)});
 
     position: relative;
+
+    margin-top: min(#{vw(160, 1191)}, #{rem(160)});
+
+    @media (max-width: 991px) {
+        --gap: #{rem(24)};
+        --grid-height: #{rem(200)};
+        --grid-height-tall: var(--grid-height);
+    }
+
+    @media (max-width: 640px) {
+        --grid-height: #{rem(250)};
+    }
+
 
     &__inner {
         display: flex;
@@ -14,6 +27,11 @@
         gap: var(--gap);
 
         height: var(--grid-height-tall);
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            height: auto;
+        }
     }
 
     &__left {
@@ -95,30 +113,42 @@
         justify-content: center;
         align-items: center;
         gap: rem(28);
+
+        @media (max-width: 640px) {
+            gap: rem(12);
+        }
     }
 
     &__title {
-        font-size: rem(40);
+        font-size: min(#{vw(40, 1191)}, #{rem(40)});
         font-weight: 500;
         letter-spacing: rem(2);
         text-transform: uppercase;
         line-height: 1;
         color: $color-white;
+
+        @media (max-width: 991px) {
+            font-size: clamp(#{rem(28)}, #{vw(40, 768)}, #{rem(40)});
+        }
     }
 
     &__desc {
-        font-size: rem(15);
+        font-size: min(#{vw(15, 1191)}, #{rem(15)});
         letter-spacing: rem(5);
         font-weight: 500;
         text-transform: uppercase;
         color: $color-white;
+
+        @media (max-width: 991px) {
+            font-size: rem(15);
+        }
     }
 
     &__desc-arrow {
         display: inline-block;
         width: em(10, 15);
         height: em(10, 15);
-        margin-left: rem(16);
+        margin-left: em(16, 15);
         background-image: url("/assets/shared/desktop/icon-right-arrow.svg");
         background-size: contain;
         background-repeat: no-repeat;

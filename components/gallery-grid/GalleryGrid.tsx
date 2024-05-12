@@ -9,6 +9,7 @@ export default function GalleryGrid() {
                         <GalleryGridItem
                             type="tall"
                             desktopImg="/assets/home/desktop/image-web-design-large.jpg"
+                            mobileImg= "/assets/home/desktop/image-web-design-small.jpg"
                             title="Web Design"
                             link="#!"
                         />
