@@ -1,4 +1,4 @@
-export default function TermsGridItem({ img, heading, desc }) {
+export default function TermsGridItem({ img, heading, desc }: {img: string, heading: string, desc: string}) {
     return (
         <div className="terms-grid-item">
             <figure className="terms-grid-item__img-wrapper">
