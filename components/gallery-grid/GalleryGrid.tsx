@@ -2,7 +2,7 @@ import GalleryGridItem from "./GalleryGridItem"
 
 export default function GalleryGrid() {
     return (
-        <section className="gallery-grid">
+        <section className="gallery-grid component-gap">
             <div className="page-container">
                 <div className="gallery-grid__inner">
                     <div className="gallery-grid__left">

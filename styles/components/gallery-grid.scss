@@ -7,8 +7,6 @@
 
     position: relative;
 
-    margin-top: min(#{vw(160, 1191)}, #{rem(160)});
-
     @media (max-width: 991px) {
         --gap: #{rem(24)};
         --grid-height: #{rem(200)};

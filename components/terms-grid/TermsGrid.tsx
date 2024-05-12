@@ -2,7 +2,7 @@ import TermsGridItem from "./TermsGridItem";
 
 export default function TermsGrid() {
     return (
-        <section className="terms-grid">
+        <section className="terms-grid component-gap">
             <div className="page-container">
                 <div className="terms-grid__inner">
                     <TermsGridItem 

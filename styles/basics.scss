@@ -35,3 +35,11 @@ body {
         padding-inline: rem(24);
     }
 }
+
+.component-gap {
+    margin-top: min(#{vw(160, 1191)}, #{rem(160)});
+
+    @media (max-width: 991px) {
+        margin-top: rem(120);
+    }
+}
