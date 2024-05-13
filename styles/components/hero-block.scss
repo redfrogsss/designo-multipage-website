@@ -1,0 +1,76 @@
+@use 'sass:math';
+
+.hero-block {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: rem(-274);
+        left: 0;
+        background: $color-light-grey;
+        width: vw(1006, 1440);
+        height: min(#{rem(594)}, #{vw(594, 1440)});
+        z-index: -1;
+        border-radius: rem(297) rem(297) rem(297) 0;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: rem(96);
+        padding-inline: rem(96);
+        padding-block: rem(145);
+
+        background: url("/assets/home/desktop/bg-pattern-hero-home.svg") no-repeat right center, $color-peach;
+        border-radius: rem(15);
+
+        overflow: clip;
+    }
+
+    &__left {
+        flex: 0 0 percentage(math.div(540, 920));
+    }
+
+    &__right {
+        flex: 0 0 percentage(math.div(284, 920));
+
+        position: relative;
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: rem(48);
+        line-height: 1;
+        font-weight: 500;
+    }
+
+    &__desc {
+        color: $color-white;
+        font-size: rem(16);
+        line-height: math.div(26, 16);
+
+        margin-top: rem(32);
+        max-width: rem(445);
+    }
+    
+    &__btn {
+        margin-top: rem(40);
+    }
+
+    &__pic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: math.div(624, 913);
+        scale: 2.2;
+        transform-origin: top;
+        transform: translateY(#{rem(-80)});
+    }
+
+    &__img {
+    }
+
+}
