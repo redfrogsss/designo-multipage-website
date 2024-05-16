@@ -3,6 +3,10 @@
 .hero-block {
     position: relative;
 
+    @media (max-width: 640px) {
+        background: url("/assets/home/desktop/bg-pattern-hero-home.svg") no-repeat left center, $color-peach;
+    }
+
     &:before {
         content: "";
         position: absolute;
@@ -27,10 +31,29 @@
         border-radius: rem(15);
 
         overflow: clip;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            height: rem(843);
+            padding-block: rem(60);
+            padding-inline: rem(58);
+            background-position: 170px 50%;
+        }
+
+        @media (max-width: 640px) {
+            background: unset;
+            padding-inline: 0;
+            padding-block: rem(80);
+            overflow-x: visible;
+        }
     }
 
     &__left {
         flex: 0 0 percentage(math.div(540, 920));
+
+        @media (max-width: 991px) {
+            text-align: center;
+        }
     }
 
     &__right {
@@ -44,6 +67,15 @@
         font-size: rem(48);
         line-height: 1;
         font-weight: 500;
+
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            font-size: rem(32);
+            line-height: math.div(36, 32);
+        }
     }
 
     &__desc {
@@ -53,10 +85,28 @@
 
         margin-top: rem(32);
         max-width: rem(445);
+
+        @media (max-width: 991px) {
+            text-align: center;
+            margin-inline: auto;
+            margin-top: rem(28);
+        }
+
+        @media (max-width: 640px) {
+            margin-top: rem(23);
+        }
     }
     
     &__btn {
         margin-top: rem(40);
+
+        @media (max-width: 991px) {
+            margin-top: rem(18);
+        }
+
+        @media (max-width: 640px) {
+            margin-top: rem(19);
+        }
     }
 
     &__pic {
@@ -68,6 +118,17 @@
         scale: 2.2;
         transform-origin: top;
         transform: translateY(#{rem(-80)});
+
+        @media (max-width: 991px) {
+            scale: 1.1;
+            transform: translateY(-32.5%);
+            top: 0;
+        }
+
+        @media (max-width: 640px) {
+            scale: 1.9;
+            transform: translateY(-30%);
+        }
     }
 
     &__img {
