@@ -11,7 +11,7 @@ export default function GalleryGrid() {
                             desktopImg="/assets/home/desktop/image-web-design-large.jpg"
                             mobileImg= "/assets/home/desktop/image-web-design-small.jpg"
                             title="Web Design"
-                            link="#!"
+                            link="/web-design"
                         />
                     </div>
                     <div className="gallery-grid__right">
