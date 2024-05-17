@@ -1,0 +1,109 @@
+@use "sass:math";
+
+.card-list {
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: percentage(math.div(30, 1111));
+        row-gap: rem(32);
+    }
+}
+
+.card-list-item {
+    --border-radius: #{rem(15)};
+
+    flex: 0 0 percentage(math.div(350, 1111));
+
+    background-color: #FDF3F0;
+    border-radius: var(--border-radius);
+
+    @media (max-width: 991px) {
+        flex: 0 0 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $color-peach;
+
+        .card-list-item__title,
+        .card-list-item__desc {
+            color: $color-white;
+        }
+    }
+
+    &__pic {
+        @media (max-width: 991px) {
+            flex: 0 0 50%;
+        }
+
+        @media (max-width: 640px) {
+            flex: 0 0 auto;
+        }
+    }
+
+    &__img {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+        @media (max-width: 991px) {
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        @media (max-width: 640px) {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(16);
+
+        padding: rem(32);
+
+        @media (max-width: 991px) {
+            flex: 0 0 50%;
+            justify-content: center;
+        }
+
+        @media (max-width: 640px) {
+            flex: 0 0 auto;
+            justify-content: start;
+            padding: rem(32) rem(29.1)
+        }
+    }
+
+    &__title {
+        color: $color-peach;
+        font-size: rem(20);
+        line-height: math.div(26, 20);
+        letter-spacing: rem(5);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+
+        @media (max-width: 991px) {
+            max-width: rem(277);
+        }
+    }
+
+    &__desc {
+        font-size: rem(16);
+        line-height: math.div(26, 16);
+        text-align: center;
+
+        @media (max-width: 991px) {
+            max-width: rem(277);
+        }
+    }
+}
