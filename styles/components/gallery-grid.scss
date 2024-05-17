@@ -18,6 +18,12 @@
     }
 
 
+    &--two-col {
+        .gallery-grid__inner {
+            height: fit-content;
+        }
+    }
+
     &__inner {
         display: flex;
         flex-direction: row;
