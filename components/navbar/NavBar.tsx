@@ -18,8 +18,8 @@ export default function NavBar() {
                     </a>
                     <div className="navbar__right">
                         <Link href="/about" className="navbar__link navbar__link--desktop">Our Company</Link>
-                        <Link href="/about" className="navbar__link navbar__link--desktop">Location</Link>
-                        <Link href="/about" className="navbar__link navbar__link--desktop">Contact</Link>
+                        <Link href="/location" className="navbar__link navbar__link--desktop">Location</Link>
+                        <Link href="/contact" className="navbar__link navbar__link--desktop">Contact</Link>
                         <DropdownMenu>
                             <DropdownMenuTrigger className="navbar__link navbar__link--mobile navbar__link--icon"><span className="icon-icon-hamburger"></span></DropdownMenuTrigger>
                             <DropdownMenuContent className="navbar__dropdown">
