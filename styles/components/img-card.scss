@@ -4,6 +4,25 @@
     position: relative;
     --border-radius: #{rem(15)};
 
+    @media (max-width: 640px) {
+        --border-radius: 0;
+        margin-top: 0;
+    }
+
+    &--reverse {
+        .img-card__inner {
+            @media (min-width: 992px) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .img-card__img {
+            @media (min-width: 992px) {
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+        }
+    }
+
     &__inner {
         border-radius: var(--border-radius);
         background: url("/assets/shared/desktop/bg-pattern-three-circles.svg") no-repeat 62% 100%,#FDF3F0;
@@ -12,6 +31,16 @@
         flex-direction: row;
         flex-wrap: nowrap;
         min-height: min(vw(640, 1111), rem(640));
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            background-position: 85% 73%;
+        }
+
+        @media (max-width: 640px) {
+            margin-inline: calc((100vw - 100%) * -0.5);
+            background-position: 0% 125%;
+        }
     }
 
     &__left {
@@ -26,6 +55,14 @@
         flex-direction: column;
         justify-content: center;
         padding-block: rem(24);
+
+        @media (max-width: 991px) {
+            padding: rem(60) rem(58) rem(66);
+        }
+        
+        @media (max-width: 640px) {
+            padding: rem(80) rem(24);
+        }
     }
 
     &__pic {
@@ -38,6 +75,15 @@
         width: 100%;
         object-fit: cover;
         border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+        @media (max-width: 991px) {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            aspect-ratio: math.div(689, 320);
+        }
+        
+        @media (max-width: 640px) {
+            aspect-ratio: math.div(375, 320);
+        }
     }
 
     &__title {
@@ -46,6 +92,15 @@
         line-height: math,div(48, 40);
         font-weight: 500;
         width: 100%;
+        
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+        
+        @media (max-width: 640px) {
+            font-size: rem(32);
+            line-height: math.div(36, 32);
+        }
     }
 
     &__desc {
@@ -53,5 +108,16 @@
         font-size: rem(16);
         line-height: math.div(26, 16);
         width: 100%;
+        
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+        
+        @media (max-width: 640px) {
+            font-size: rem(15);
+            line-height: math.div(25, 15);
+            margin-top: rem(24);
+        }
+        
     }
 }
