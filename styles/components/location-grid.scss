@@ -1,0 +1,76 @@
+@use 'sass:math';
+
+.location-grid {
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            gap: rem(80);
+        }
+    }
+}
+
+.location-grid-item {
+    --pic-bg-rotation: 0deg;
+    flex: 0 0 percentage(math.div(350, 1111));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &:nth-child(3n+1) {
+        --pic-bg-rotation: 90deg;
+    }
+
+    &:nth-child(3n+2) {
+        --pic-bg-rotation: 0deg;
+    }
+
+    &:nth-child(3n+3) {
+        --pic-bg-rotation: -90deg;
+    }
+
+    &__pic {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        display: block;
+
+        &:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            display: block;
+            background: url("/assets/shared/desktop/bg-pattern-small-circle.svg") no-repeat;
+            background-size: contain;
+            rotate: var(--pic-bg-rotation);
+        }
+    }
+
+    &__img {
+        width: rem(202);
+        aspect-ratio: 1;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: rem(20);
+        line-height: math.div(26, 20);
+        font-weight: 500;
+        margin-top: rem(48);
+        text-transform: uppercase;
+        letter-spacing: rem(5);
+        color: $color-dark-black;
+    }
+
+    &__btn {
+        width: fit-content;
+        margin-top: rem(32);
+        font-weight: 500;
+        letter-spacing: rem(1);
+    }
+}
