@@ -1,0 +1,73 @@
+@use 'sass:math';
+
+.office-cards-row {
+
+    &--reverse {
+        .office-cards-row__inner {
+            flex-direction: row-reverse;
+        }
+    }
+    
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        min-height: rem(326);
+        gap: percentage(math.div(30, 1111));
+    }
+
+    &__left {
+        flex: 0 0 percentage(math.div(730, 1111))
+    }
+
+    &__right {
+        flex: 0 0 percentage(math.div(350, 1111))
+    }
+    
+    &__pic { }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: rem(15);
+    }
+}
+
+.office-content-card {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    background: url("/assets/shared/desktop/bg-pattern-two-circles.svg") no-repeat bottom left, $color-peach-2;
+    border-radius: rem(15);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: percentage(math.div(95, 730));
+
+    &__title {
+        font-size: rem(40);
+        line-height: math.div(48, 40);
+        font-weight: 500;
+        color: $color-peach;
+    }
+
+    &__content {
+        margin-top: rem(24);
+        display: flex;
+        flex-direction: row;
+        gap: percentage(math.div(30, 540));
+        
+        &-left, &-right {
+            flex: 0 0 percentage(math.div(255, 540));
+            font-size: rem(16);
+            line-height: math.div(26, 16);
+            color: $color-dark-black;
+        }
+    }
+
+
+}
