@@ -18,7 +18,7 @@ const defaultData: dataInterface = {
 
 export default function officecardsrow(data: dataInterface = defaultData) {
     return (
-        <div className={`component-gap office-cards-row${data.reverse ? " office-cards-row--reverse" : ""}`}>
+        <div className={`office-cards-row${data.reverse ? " office-cards-row--reverse" : ""}`}>
             <div className="page-container">
                 <div className="office-cards-row__inner">
                     <div className="office-cards-row__left">

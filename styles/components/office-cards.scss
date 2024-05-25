@@ -2,9 +2,24 @@
 
 .office-cards-row {
 
+    &+&{
+        margin-top: rem(32);
+
+        @media (max-width: 991px) {
+            margin-top: rem(120);
+        }
+        
+        @media (max-width: 640px) {
+            margin-top: rem(40);
+        }
+    }
+
     &--reverse {
         .office-cards-row__inner {
-            flex-direction: row-reverse;
+            
+            @media (min-width: 992px) {
+                flex-direction: row-reverse;
+            }
         }
     }
     
@@ -15,10 +30,29 @@
         width: 100%;
         min-height: rem(326);
         gap: percentage(math.div(30, 1111));
+
+        @media (max-width: 991px) {
+            flex-direction: column-reverse;
+            gap: rem(24);
+        }
+
+        @media (max-width: 640px) {
+            margin-inline: calc((100vw - 100%) * -.5);
+            width: 100vw;
+            gap: 0;
+        }
     }
 
     &__left {
-        flex: 0 0 percentage(math.div(730, 1111))
+        flex: 0 0 percentage(math.div(730, 1111));
+
+        @media (max-width: 991px) {
+            aspect-ratio: math.div(689, 326);
+        }
+
+        @media (max-width: 640px) {
+            aspect-ratio: unset;
+        }
     }
 
     &__right {
@@ -32,6 +66,15 @@
         width: 100%;
         object-fit: cover;
         border-radius: rem(15);
+        
+        @media (max-width: 991px) {
+            aspect-ratio: math.div(689, 326);
+        }
+        
+        @media (max-width: 640px) {
+            border-radius: 0;
+            aspect-ratio: math.div(375, 320);
+        }
     }
 }
 
@@ -48,11 +91,29 @@
     justify-content: center;
     padding-inline: percentage(math.div(95, 730));
 
+    @media (max-width: 991px) {
+        padding-inline: rem(75);
+    }
+    
+    @media (max-width: 640px) {
+        padding-inline: rem(24);
+        padding-block: rem(80);
+        border-radius: 0;
+        
+        background: url("/assets/shared/mobile/bg-pattern-one-circle.svg") no-repeat top left, url("/assets/shared/mobile/bg-pattern-one-circle.svg") no-repeat #{rem(292)} #{rem(292)}, $color-peach-2;
+    }
+
     &__title {
         font-size: rem(40);
         line-height: math.div(48, 40);
         font-weight: 500;
         color: $color-peach;
+
+        @media (max-width: 640px) {
+            text-align: center;
+            font-size: rem(32);
+            line-height: math.div(36, 32);
+        }
     }
 
     &__content {
@@ -60,12 +121,23 @@
         display: flex;
         flex-direction: row;
         gap: percentage(math.div(30, 540));
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+            gap: rem(24);
+            text-align: center;
+        }
         
         &-left, &-right {
             flex: 0 0 percentage(math.div(255, 540));
             font-size: rem(16);
             line-height: math.div(26, 16);
             color: $color-dark-black;
+
+            @media (max-width: 640px) {
+                font-size: rem(15);
+                line-height: math.div(25, 15);
+            }
         }
     }
 
