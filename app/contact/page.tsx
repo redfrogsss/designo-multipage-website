@@ -1,8 +1,10 @@
 import LocationGrid from "@/components/location-grid/LocationGrid";
+import ContactForm from "@/components/contact-form/ContactForm";
 
 export default function ContentPage () {
     return (
         <main>
+            <ContactForm />
             <LocationGrid
                 data={[
                     {
