@@ -10,19 +10,19 @@ export default function GraphicDesignPage() {
             <CardList
                 data={[
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/graphic-design/desktop/image-change.jpg",
                         title: "Tim Brown",
                         desc: "A book cover designed for Tim Brown’s new release, ‘Change’"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/graphic-design/desktop/image-boxed-water.jpg",
                         title: "Boxed Water",
                         desc: "A simple packaging concept made for Boxed Water"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/graphic-design/desktop/image-science.jpg",
                         title: "Science!",
                         desc: "A poster made in collaboration with the Federal Art Project"
@@ -37,7 +37,7 @@ export default function GraphicDesignPage() {
                         title: "App Design",
                         desktopImg: "/assets/home/desktop/image-app-design.jpg",
                         mobileImg: "/assets/home/desktop/image-app-design.jpg",
-                        link: "/graphic-design"
+                        link: "/app-design"
                     },
                     {
                         title: "Web Design",

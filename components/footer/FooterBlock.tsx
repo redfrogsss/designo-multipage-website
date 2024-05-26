@@ -12,7 +12,7 @@ export default function FooterBlock() {
                     </p>
                 </div>
                 <div className="footer-blk__right">
-                    <Link href="#!" className="footer-blk__btn btn btn--dark">Get In Touch</Link>
+                    <Link href="/contact" className="footer-blk__btn btn btn--dark">Get In Touch</Link>
                 </div>
             </div>
         </FadeInBottom>

@@ -10,31 +10,31 @@ export default function AppDesignPage() {
             <CardList
                 data={[
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/app-design/desktop/image-airfilter.jpg",
                         title: "AirFilter",
                         desc: "Solving the problem of poor indoor air quality by filtering the air"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/app-design/desktop/image-eyecam.jpg",
                         title: "Eyecam",
                         desc: "Product that lets you edit your favorite photos and videos at any time"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/app-design/desktop/image-faceit.jpg",
                         title: "FaceIT",
                         desc: "Get to meet your favorite internet superstar with the faceit app"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/app-design/desktop/image-todo.jpg",
                         title: "Todo",
                         desc: "A todo app that features cloud sync with light and dark mode"
                     },
                     {
-                        href: "#!",
+                        href: "https://github.com/redfrogsss/designo-multipage-website",
                         img: "/assets/app-design/desktop/image-loopstudios.jpg",
                         title: "Loopstudios",
                         desc: "A VR experience app made for Loopstudios"

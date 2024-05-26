@@ -6,13 +6,13 @@ export default function FooterSection() {
             <div className="page-container">
                 <div className="footer-section__inner">
                     <div className="footer-section__nav">
-                        <picture className="footer-section__pic">
+                        <Link href="/" className="footer-section__pic">
                             <img src="/assets/shared/desktop/logo-light.png" alt="DESIGNO Logo" className="footer-section__img" />
-                        </picture>
+                        </Link>
                         <div className="footer-section__page-row">
                             <Link href="/about" className="footer-section__page">Our Company</Link>
-                            <Link href="/about" className="footer-section__page">Location</Link>
-                            <Link href="/about" className="footer-section__page">Contact</Link>
+                            <Link href="/location" className="footer-section__page">Location</Link>
+                            <Link href="/contact" className="footer-section__page">Contact</Link>
                         </div>
                     </div>
                     <div className="footer-section__contact">
@@ -29,21 +29,21 @@ export default function FooterSection() {
                             </strong>
                         </p>
                         <div className="footer-section__social-row">
-                            <a href="#!" className="footer-section__social-link" aria-label="Facebook">
+                            <Link href="https://facebook.com" target="_blank" className="footer-section__social-link" aria-label="Facebook">
                                 <span className="icon-icon-facebook" aria-hidden="true"></span>
-                            </a>
-                            <a href="#!" className="footer-section__social-link" aria-label="Youtube">
+                            </Link>
+                            <Link href="https://youtube.com" target="_blank" className="footer-section__social-link" aria-label="Youtube">
                                 <span className="icon-icon-youtube" aria-hidden="true"></span>
-                            </a>
-                            <a href="#!" className="footer-section__social-link" aria-label="Twitter">
+                            </Link>
+                            <Link href="https://x.com" target="_blank" className="footer-section__social-link" aria-label="Twitter">
                                 <span className="icon-icon-twitter" aria-hidden="true"></span>
-                            </a>
-                            <a href="#!" className="footer-section__social-link" aria-label="Pinterest">
+                            </Link>
+                            <Link href="https://pinterest.com" target="_blank" className="footer-section__social-link" aria-label="Pinterest">
                                 <span className="icon-icon-pinterest" aria-hidden="true"></span>
-                            </a>
-                            <a href="#!" className="footer-section__social-link" aria-label="Instagram">
+                            </Link>
+                            <Link href="https://instagram.com" target="_blank" className="footer-section__social-link" aria-label="Instagram">
                                 <span className="icon-icon-instagram" aria-hidden="true"></span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

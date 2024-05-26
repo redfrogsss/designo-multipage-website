@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FadeInBottom from "../utils/FadeInBottom";
 
 export default function LocationGridItem({
@@ -18,7 +19,7 @@ export default function LocationGridItem({
                     <img src={img} alt={title} className="location-grid-item__img" />
                 </picture>
                 <p className="location-grid-item__title">{title}</p>
-                <a href={href} className="location-grid-item__btn btn">{btnText}</a>
+                <Link href={href} className="location-grid-item__btn btn">{btnText}</Link>
             </div>
         </FadeInBottom>
     );

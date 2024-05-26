@@ -19,19 +19,19 @@ export default function AboutPage() {
                         img: "/assets/shared/desktop/illustration-canada.svg",
                         title: "Canada",
                         btnText: "See Location",
-                        href: "#!"
+                        href: "/location"
                     },
                     {
                         img: "/assets/shared/desktop/illustration-australia.svg",
                         title: "Australia",
                         btnText: "See Location",
-                        href: "#!"
+                        href: "/location"
                     },
                     {
                         img: "/assets/shared/desktop/illustration-united-kingdom.svg",
                         title: "United Kingdom",
                         btnText: "See Location",
-                        href: "#!"
+                        href: "/location"
                     },
                 ]}
             />
