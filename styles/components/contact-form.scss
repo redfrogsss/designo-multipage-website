@@ -140,6 +140,22 @@
         & textarea {
             min-height: rem(104);
         }
+
+        & p[id*='-form-item-message'] {
+            color: white;
+            margin-left: rem(20);
+            font-weight: 600;
+
+            @media (max-width: 991px) {
+                margin-left: 0;
+            }
+
+            &:before {
+                content: "* ";
+                color: #FFADB0;
+                font-weight: 600;
+            }
+        }
     }
 
     &__submit-btn {
