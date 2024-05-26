@@ -1,3 +1,4 @@
+import FadeInBottom from "../utils/FadeInBottom";
 import LocationGridItem from "./LocationGridItem";
 
 export default function LocationGrid ({
@@ -14,7 +15,7 @@ export default function LocationGrid ({
         <div className="location-grid component-gap">
             <div className="page-container">
                 <div className="location-grid__inner">
-                    {data.map((d, i) => <LocationGridItem 
+                    {data.map((d, i) => <LocationGridItem
                         key={i}
                         img={d.img}
                         title={d.title}

@@ -1,3 +1,5 @@
+import FadeInBottom from "../utils/FadeInBottom";
+
 export default function CardListItem ({
     href = "#!",
     img = "/assets/home/desktop/image-web-design-large.jpg",
@@ -10,14 +12,17 @@ export default function CardListItem ({
     desc: string;
 }) {
     return (
-        <a href={href} className="card-list-item">
-            <picture className="card-list-item__pic">
-                <img src={img} alt={title} className="card-list-item__img" />
-            </picture>
-            <div className="card-list-item__content">
-                <h3 className="card-list-item__title">{title}</h3>
-                <p className="card-list-item__desc">{desc}</p>
-            </div>
-        </a>
+        <FadeInBottom>
+            <a href={href} className="card-list-item">
+                <picture className="card-list-item__pic">
+                    <img src={img} alt={title} className="card-list-item__img" />
+                </picture>
+                <div className="card-list-item__content">
+                    <h3 className="card-list-item__title">{title}</h3>
+                    <p className="card-list-item__desc">{desc}</p>
+                </div>
+            </a>
+        </FadeInBottom>
+        
     )
 }

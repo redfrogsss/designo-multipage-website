@@ -1,0 +1,15 @@
+.fadeInBottom {
+    animation: fadeInBottom 800ms $transition;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1
+    }
+}

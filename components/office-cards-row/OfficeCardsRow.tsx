@@ -1,3 +1,4 @@
+import FadeInBottom from "../utils/FadeInBottom";
 import OfficeContentCard from "./OfficeContentCard";
 
 interface dataInterface {
@@ -21,14 +22,18 @@ export default function officecardsrow(data: dataInterface = defaultData) {
         <div className={`office-cards-row${data.reverse ? " office-cards-row--reverse" : ""}`}>
             <div className="page-container">
                 <div className="office-cards-row__inner">
-                    <div className="office-cards-row__left">
-                        <OfficeContentCard title={data.title} leftContent={data.leftContent} rightContent={data.rightContent} />
-                    </div>
-                    <div className="office-cards-row__right">
-                        <picture className="office-cards-row__pic">
-                            <img src={data.location} alt={data.title} className="office-cards-row__img" />
-                        </picture>
-                    </div>
+                    <FadeInBottom>
+                        <div className="office-cards-row__left">
+                            <OfficeContentCard title={data.title} leftContent={data.leftContent} rightContent={data.rightContent} />
+                        </div>
+                    </FadeInBottom>
+                    <FadeInBottom>
+                        <div className="office-cards-row__right">
+                            <picture className="office-cards-row__pic">
+                                <img src={data.location} alt={data.title} className="office-cards-row__img" />
+                            </picture>
+                        </div>
+                    </FadeInBottom>
                 </div>
             </div>
         </div>
