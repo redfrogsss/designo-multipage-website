@@ -1,4 +1,4 @@
-import HeroBlock from "../hero-block/HeroBlock";
+import { getComponent } from "@/helpers/getComponent";
 
 async function getPage(path: string = "") {
     try {
@@ -8,27 +8,6 @@ async function getPage(path: string = "") {
     } catch (error) {
         console.error(error);
         return undefined;
-    }
-}
-
-function getImg(img: any) {
-    if (img == undefined) return;
-    return `${process.env.cms_root}${img.data.attributes.url}`;
-}
-
-function getComponent(data: any, key: number) {
-    switch (data.__component) {
-        case "component.hero-block":
-            const props = {
-                title: data.title,
-                desc: data.desc,
-                img: getImg(data.img) ?? "",
-                btnText: data.btn_text,
-                btnHref: data.btn_href.data?.attributes.path ?? "#!"
-            }
-            return <HeroBlock key={key} {...props} />;
-        default:
-            return null;
     }
 }
 
