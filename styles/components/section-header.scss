@@ -2,6 +2,26 @@
 
 .section-header {
 
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: rem(126);
+        left: 0;
+        background: $color-light-grey;
+        width: vw(1006, 1440);
+        height: min(#{rem(594)}, #{vw(594, 1440)});
+        z-index: -1;
+        border-radius: rem(297) rem(297) rem(297) 0;
+        opacity: .5;
+
+        @media (max-width: 991px) {
+            content: none;
+        }
+    }
+
+
     @media (max-width: 767px) {
         background-color: $color-peach;
         background-image: url("/assets/web-design/desktop/bg-pattern-intro-web.svg");

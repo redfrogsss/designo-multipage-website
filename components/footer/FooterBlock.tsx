@@ -4,7 +4,7 @@ import FadeInBottom from "../utils/FadeInBottom";
 export default function FooterBlock() {
     return (
         <FadeInBottom>
-            <div className="footer-blk">
+            <div className="footer-blk component-gap">
                 <div className="footer-blk__left">
                     <p className="footer-blk__title">Let&apos;s talk about <br />your project</p>
                     <p className="footer-blk__desc">

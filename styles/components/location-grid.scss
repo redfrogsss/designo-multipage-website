@@ -1,6 +1,31 @@
 @use 'sass:math';
 
 .location-grid {
+
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: rem(182);
+        right: 0;
+        width: min(#{vw(1006, 1440)}, #{rem(1006)});
+        height: rem(594);
+        background-color: #F1F3F5;
+        z-index: -10;
+        border-radius: rem(297) 0 0 0;
+        opacity: .5;
+        
+        @media (max-width: 991px) {
+            content: unset;
+        }
+    }
+
+    &:last-child::before {
+        top: rem(90);
+
+    }
+
     &__inner {
         display: flex;
         flex-direction: row;
@@ -72,5 +97,8 @@
         margin-top: rem(32);
         font-weight: 500;
         letter-spacing: rem(1);
+
+        padding-block: em(18, 15) em(14, 15);
+        padding-inline: em(17.5, 15) em(18.5, 15);
     }
 }

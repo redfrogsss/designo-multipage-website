@@ -15,7 +15,7 @@
 .footer-blk {
     border-radius: rem(15);
     background-color: $color-peach;
-    margin-top: percentage(math.div(160, 1111));
+    // margin-top: percentage(math.div(160, 1111));
 
     padding-top: percentage(math.div(72,1111));
     padding-bottom: percentage(math.div(70,1111));
@@ -102,12 +102,23 @@
 }
 
 .footer-section {
-    padding-top: rem(144);
-    padding-bottom: rem(72);
+    padding-block: rem(72);
     background-color: $color-black;
-    margin-top: rem(-72);
 
     position: relative;
+
+    @media (max-width: 991px) {
+        padding-block: rem(80);
+    }
+    
+    @media (max-width: 640px) {
+        padding-block: rem(64);
+    }
+
+    .footer:not(.component-gap) & {
+        padding-top: rem(144);
+        margin-top: rem(-72);
+    }
 
     &__inner {
         display: flex;

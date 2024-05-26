@@ -17,6 +17,11 @@
         height: min(#{rem(594)}, #{vw(594, 1440)});
         z-index: -1;
         border-radius: rem(297) rem(297) rem(297) 0;
+        opacity: .5;
+
+        @media (max-width: 991px) {
+            content: none;
+        }
     }
 
     &__inner {

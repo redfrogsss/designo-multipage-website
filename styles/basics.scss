@@ -4,6 +4,12 @@ body {
     font-size: rem(16);
     font-weight: 400;
     line-height: math.div(26, 16);
+
+    /* Font Smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .fs-h1 {

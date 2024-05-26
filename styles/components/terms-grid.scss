@@ -14,8 +14,9 @@
         background-color: #F1F3F5;
         z-index: -10;
         border-radius: rem(297) 0 rem(297) rem(297);
+        opacity: .5;
         
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
             content: unset;
         }
     }
@@ -128,6 +129,7 @@
         text-align: center;
 
         margin-top: rem(32);
+        color: $color-dark-black;
 
         @media (max-width: 768px) {
             margin-top: rem(16);

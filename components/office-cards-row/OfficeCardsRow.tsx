@@ -28,11 +28,11 @@ export default function officecardsrow(data: dataInterface = defaultData) {
                         </div>
                     </FadeInBottom>
                     <FadeInBottom>
-                        <div className="office-cards-row__right">
+                        <a href="https://maps.google.com" target="_blank" className="office-cards-row__right">
                             <picture className="office-cards-row__pic">
                                 <img src={data.location} alt={data.title} className="office-cards-row__img" />
                             </picture>
-                        </div>
+                        </a>
                     </FadeInBottom>
                 </div>
             </div>
