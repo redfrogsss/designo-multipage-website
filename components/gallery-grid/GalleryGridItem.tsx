@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FadeInBottom from "../utils/FadeInBottom";
 import Link from "next/link";
 
 export default function GalleryGridItem(
@@ -18,20 +17,17 @@ export default function GalleryGridItem(
     }
 ) {
     return (
-        <FadeInBottom>
-            <Link href={link} className={`gallery-grid-item ${type == "tall" ? "gallery-grid-item--tall" : ""}`}>
-                <picture className="gallery-grid-item__pic-layer">
-                    {mobileImg && <source media="(max-width: 991px)" srcSet={mobileImg} />}
-                    <Image src={desktopImg} alt="image web desktop large" fill={true} className="gallery-grid-item__pic" />
-                </picture>
-                <div className="gallery-grid-item__text-layer">
-                    <div className="gallery-grid-item__text-wrapper">
-                        <span className="gallery-grid-item__title ">{title}</span>
-                        <span className="gallery-grid-item__desc">View Projects<span className="gallery-grid-item__desc-arrow"></span></span>
-                    </div>
+        <Link href={link} className={`gallery-grid-item ${type == "tall" ? "gallery-grid-item--tall" : ""}`}>
+            <picture className="gallery-grid-item__pic-layer">
+                {mobileImg && <source media="(max-width: 991px)" srcSet={mobileImg} />}
+                <Image src={desktopImg} alt="image web desktop large" fill={true} className="gallery-grid-item__pic" />
+            </picture>
+            <div className="gallery-grid-item__text-layer">
+                <div className="gallery-grid-item__text-wrapper">
+                    <span className="gallery-grid-item__title ">{title}</span>
+                    <span className="gallery-grid-item__desc">View Projects<span className="gallery-grid-item__desc-arrow"></span></span>
                 </div>
-            </Link>
-        </FadeInBottom>
-        
+            </div>
+        </Link>
     );
 }

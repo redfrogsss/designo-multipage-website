@@ -1,3 +1,4 @@
+import FadeInBottom from "../utils/FadeInBottom"
 import GalleryGridItem from "./GalleryGridItem"
 
 export default function GalleryGrid({
@@ -35,51 +36,52 @@ export default function GalleryGrid({
     return (
         <section className={`gallery-grid component-gap${type == "two" ? " gallery-grid--two-col" : ""}`}>
             <div className="page-container">
-
-                {type === "three" && <div className="gallery-grid__inner">
-                    <div className="gallery-grid__left">
+                <FadeInBottom>
+                    {type === "three" && <div className="gallery-grid__inner">
+                        <div className="gallery-grid__left">
+                            <GalleryGridItem
+                                key={0}
+                                type="tall"
+                                desktopImg={data[0].desktopImg}
+                                mobileImg={data[0].mobileImg}
+                                title={data[0].title}
+                                link={data[0].link}
+                            />
+                        </div>
+                        <div className="gallery-grid__right">
+                            <GalleryGridItem
+                                type="normal"
+                                desktopImg={data[1].desktopImg}
+                                title={data[1].title}
+                                link={data[1].link}
+                            />
+                            <GalleryGridItem
+                                type="normal"
+                                desktopImg={data[2].desktopImg}
+                                title={data[2].title}
+                                link={data[2].link}
+                            />
+                        </div>
+                    </div>
+                    }
+                    {type === "two" && <div className="gallery-grid__inner">
                         <GalleryGridItem
                             key={0}
-                            type="tall"
+                            type="normal"
                             desktopImg={data[0].desktopImg}
                             mobileImg={data[0].mobileImg}
                             title={data[0].title}
                             link={data[0].link}
                         />
-                    </div>
-                    <div className="gallery-grid__right">
                         <GalleryGridItem
                             type="normal"
                             desktopImg={data[1].desktopImg}
                             title={data[1].title}
                             link={data[1].link}
                         />
-                        <GalleryGridItem
-                            type="normal"
-                            desktopImg={data[2].desktopImg}
-                            title={data[2].title}
-                            link={data[2].link}
-                        />
                     </div>
-                </div>
-                }
-                {type === "two" && <div className="gallery-grid__inner">
-                    <GalleryGridItem
-                        key={0}
-                        type="normal"
-                        desktopImg={data[0].desktopImg}
-                        mobileImg={data[0].mobileImg}
-                        title={data[0].title}
-                        link={data[0].link}
-                    />
-                    <GalleryGridItem
-                        type="normal"
-                        desktopImg={data[1].desktopImg}
-                        title={data[1].title}
-                        link={data[1].link}
-                    />
-                </div>
-                }
+                    }
+                </FadeInBottom>
             </div>
         </section>
     );
