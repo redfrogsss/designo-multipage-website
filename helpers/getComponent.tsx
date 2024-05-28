@@ -1,3 +1,4 @@
+import AboutBlock from "@/components/about-block/AboutBlock";
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 import SectionHeader from "@/components/section-header/SectionHeader";
@@ -56,6 +57,16 @@ function getComponent(data: any, key: number) {
                 desc: data.desc
             }
             return <SectionHeader key={key} {...props} />
+
+        case "component.about-block":
+            props = {
+                title: data.title,
+                desc: data.desc,
+                desktopImg: getImg(data.desktopImg) ?? "",
+                tabletImg: getImg(data.tabletImg) ?? "",
+                mobileImg: getImg(data.mobileImg) ?? ""
+            }
+            return <AboutBlock key={key} {...props} />
             
         default:
             return null;
