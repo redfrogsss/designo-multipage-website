@@ -1,3 +1,4 @@
+import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 
 function getImg(img: any) {
@@ -6,17 +7,33 @@ function getImg(img: any) {
 }
 
 function getComponent(data: any, key: number) {
-    switch (data.__component) {
 
+    let props = {};
+
+    switch (data.__component) {
         case "component.hero-block":
-            const props = {
+            props = {
                 title: data.title,
                 desc: data.desc,
                 img: getImg(data.img) ?? "",
                 btnText: data.btn_text,
-                btnHref: data.btn_href.data?.attributes.path ?? "#!"
+                btnHref: data.btn_href.data?.attributes.path ?? ""
             }
             return <HeroBlock key={key} {...props} />;
+
+        case "component.gallery-grid":
+            props = {
+                type: data.type,
+                data: data.Items.map((item: any) => {
+                    return {
+                        title: item.title,
+                        desktopImg: getImg(item.img) ?? "",
+                        mobileImg: getImg(item.mobile_img) ?? "",
+                        link: item.page.data?.attributes.path ?? ""
+                    }
+                })
+            }
+            return <GalleryGrid key={key} {...props} />
             
         default:
             return null;
