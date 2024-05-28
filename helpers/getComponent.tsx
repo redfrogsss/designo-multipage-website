@@ -1,5 +1,6 @@
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
+import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
 
 function getImg(img: any) {
@@ -48,6 +49,13 @@ function getComponent(data: any, key: number) {
             }
 
             return <TermsGrid key={key} {...props} />
+
+        case "component.section-header":
+            props = {
+                title: data.title,
+                desc: data.desc
+            }
+            return <SectionHeader key={key} {...props} />
             
         default:
             return null;
