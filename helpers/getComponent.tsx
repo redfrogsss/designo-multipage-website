@@ -1,5 +1,6 @@
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
+import TermsGrid from "@/components/terms-grid/TermsGrid";
 
 function getImg(img: any) {
     if (img == undefined) return;
@@ -34,6 +35,19 @@ function getComponent(data: any, key: number) {
                 })
             }
             return <GalleryGrid key={key} {...props} />
+
+        case "component.terms-grid":
+            props = {
+                data: data.Items.map((item: any) => {
+                    return {
+                        img: getImg(item.img) ?? "",
+                        heading: item.title ?? "",
+                        desc: item.desc ?? ""
+                    };
+                })
+            }
+
+            return <TermsGrid key={key} {...props} />
             
         default:
             return null;
