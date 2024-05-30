@@ -1,4 +1,5 @@
 import AboutBlock from "@/components/about-block/AboutBlock";
+import CardList from "@/components/card-list/CardList";
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 import SectionHeader from "@/components/section-header/SectionHeader";
@@ -9,9 +10,9 @@ function getImg(img: any) {
     return `${process.env.cms_root}${img.data.attributes.url}`;
 }
 
-function getComponent(data: any, key: number) {
+async function getComponent(data: any, key: number) {
 
-    let props = {};
+    let props = {}, res, resData;
 
     switch (data.__component) {
         case "component.hero-block":
@@ -67,6 +68,61 @@ function getComponent(data: any, key: number) {
                 mobileImg: getImg(data.mobileImg) ?? ""
             }
             return <AboutBlock key={key} {...props} />
+            
+        case "collections.web-design":
+            if (data.enable == false) return null;
+            res = await fetch(`${process.env.cms_path}web-designs?populate=deep`);
+            resData = await res.json();
+            
+            props = {
+                data: resData.data.map((item: any, index: number) => {
+                    return {
+                        title: item.attributes.title,
+                        desc: item.attributes.desc,
+                        img: getImg(item.attributes.img) ?? "",
+                        page: item.attributes.page?.data?.attributes.path ?? ""
+                    }
+                })
+            };
+
+            return <CardList key={key} {...props}/>
+            
+        case "collections.app-design":
+            if (data.enable == false) return null;
+            res = await fetch(`${process.env.cms_path}app-designs?populate=deep`);
+            resData = await res.json();
+            
+            props = {
+                data: resData.data.map((item: any, index: number) => {
+                    return {
+                        title: item.attributes.title,
+                        desc: item.attributes.desc,
+                        img: getImg(item.attributes.img) ?? "",
+                        page: item.attributes.page?.data?.attributes.path ?? ""
+                    }
+                })
+            };
+
+            return <CardList key={key} {...props}/>
+            
+        case "collections.graphic-design":
+            if (data.enable == false) return null;
+            res = await fetch(`${process.env.cms_path}graphic-designs?populate=deep`);
+            resData = await res.json();
+            
+            props = {
+                data: resData.data.map((item: any, index: number) => {
+                    return {
+                        title: item.attributes.title,
+                        desc: item.attributes.desc,
+                        img: getImg(item.attributes.img) ?? "",
+                        page: item.attributes.page?.data?.attributes.path ?? ""
+                    }
+                })
+            };
+
+            return <CardList key={key} {...props}/>
+            
             
         default:
             return null;
