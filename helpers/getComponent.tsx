@@ -3,6 +3,7 @@ import CardList from "@/components/card-list/CardList";
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 import ImgCard from "@/components/img-card/ImgCard";
+import LocationGrid from "@/components/location-grid/LocationGrid";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
 import { reverse } from "dns";
@@ -163,6 +164,19 @@ async function getComponent(data: any, key: number) {
                 reverse: data.reverse
             }
             return <ImgCard key={key} {...props} />
+            
+        case "component.location-grid":
+            props = {
+                data: data.Items.map((item: any) => {
+                    return {
+                        img: getImg(item.img) ?? "",
+                        title: item.title,
+                        btnText: item.btnText,
+                        href: item.page.data?.attributes.path ?? ""
+                    }
+                })
+            }
+            return <LocationGrid key={key} {...props} />
             
         default:
             return null;

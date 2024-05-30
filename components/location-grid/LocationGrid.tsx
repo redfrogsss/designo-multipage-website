@@ -1,4 +1,3 @@
-import FadeInBottom from "../utils/FadeInBottom";
 import LocationGridItem from "./LocationGridItem";
 
 export default function LocationGrid ({
