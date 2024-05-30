@@ -5,6 +5,7 @@ import HeroBlock from "@/components/hero-block/HeroBlock";
 import ImgCard from "@/components/img-card/ImgCard";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
+import { reverse } from "dns";
 
 function getImg(img: any) {
     if (img == undefined) return;
@@ -158,7 +159,8 @@ async function getComponent(data: any, key: number) {
                 desc: getRichText(data.desc) ?? "",
                 img: getImg(data.img) ?? "",
                 tabletImg: getImg(data.tabletImg) ?? undefined,
-                mobileImg: getImg(data.mobileImg) ?? undefined
+                mobileImg: getImg(data.mobileImg) ?? undefined,
+                reverse: data.reverse
             }
             return <ImgCard key={key} {...props} />
             
