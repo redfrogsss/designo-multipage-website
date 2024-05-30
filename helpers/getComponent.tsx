@@ -2,12 +2,41 @@ import AboutBlock from "@/components/about-block/AboutBlock";
 import CardList from "@/components/card-list/CardList";
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
+import ImgCard from "@/components/img-card/ImgCard";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
 
 function getImg(img: any) {
     if (img == undefined) return;
     return `${process.env.cms_root}${img.data.attributes.url}`;
+}
+
+function getRichText(data: any) {
+    if (data == undefined) return;
+    let html = "";
+
+
+    data.forEach((item: any) => {
+        if (item.type == "paragraph") {
+            item.children.forEach((child: any) => {
+                if (child.type == "text") {
+                    html += `<p>${child.text == "" ? "&nbsp;" : child.text}</p>`;
+                }
+            });
+        }
+        
+        if (item.type == "heading") {
+            let tag = `h${item.level}`;
+            
+            item.children.forEach((child: any) => {
+                if (child.type == "text") {
+                    html += `<${tag}>${child.text == "" ? "&nbsp;" : child.text}</${tag}>`;
+                }
+            });
+        }
+    });
+
+    return html;
 }
 
 async function getComponent(data: any, key: number) {
@@ -122,7 +151,16 @@ async function getComponent(data: any, key: number) {
             };
 
             return <CardList key={key} {...props}/>
-            
+        
+        case "component.image-card":
+            props = {
+                title: data.title,
+                desc: getRichText(data.desc) ?? "",
+                img: getImg(data.img) ?? "",
+                tabletImg: getImg(data.tabletImg) ?? undefined,
+                mobileImg: getImg(data.mobileImg) ?? undefined
+            }
+            return <ImgCard key={key} {...props} />
             
         default:
             return null;
