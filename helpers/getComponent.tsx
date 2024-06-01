@@ -9,46 +9,8 @@ import OfficeCardsRow from "@/components/office-cards-row/OfficeCardsRow";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
 
-function getImg(img: any) {
-    if (img == undefined) return;
-    return `${process.env.cms_root}${img.data.attributes.url}`;
-}
-
-function getRichText(data: any) {
-    if (data == undefined) return;
-    let html = "";
-
-    data.forEach((item: any) => {
-        if (item.type == "paragraph") {
-
-            let paraHTML = "";
-
-            item.children.forEach((child: any) => {
-                if (child.type == "text") {
-                    let text = child.text == "" ? "&nbsp;" : child.text;
-                    if (child.bold == true) {
-                        text = `<b>${text}</b>`;
-                    }
-                    paraHTML += text;
-                }
-            });
-            
-            html += `<p>${paraHTML}</p>`;
-        }
-        
-        if (item.type == "heading") {
-            let tag = `h${item.level}`;
-            
-            item.children.forEach((child: any) => {
-                if (child.type == "text") {
-                    html += `<${tag}>${child.text == "" ? "&nbsp;" : child.text}</${tag}>`;
-                }
-            });
-        }
-    });
-
-    return html;
-}
+import { getImg } from "./getImg";
+import { getRichText } from "./getRichText";
 
 async function getComponent(data: any, key: number) {
 
