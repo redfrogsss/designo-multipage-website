@@ -4,9 +4,9 @@ import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 import ImgCard from "@/components/img-card/ImgCard";
 import LocationGrid from "@/components/location-grid/LocationGrid";
+import OfficeCardsRow from "@/components/office-cards-row/OfficeCardsRow";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import TermsGrid from "@/components/terms-grid/TermsGrid";
-import { reverse } from "dns";
 
 function getImg(img: any) {
     if (img == undefined) return;
@@ -17,12 +17,15 @@ function getRichText(data: any) {
     if (data == undefined) return;
     let html = "";
 
-
     data.forEach((item: any) => {
         if (item.type == "paragraph") {
             item.children.forEach((child: any) => {
                 if (child.type == "text") {
-                    html += `<p>${child.text == "" ? "&nbsp;" : child.text}</p>`;
+                    let text = child.text == "" ? "&nbsp;" : child.text;
+                    if (child.bold == true) {
+                        text = `<b>${text}</b>`;
+                    }
+                    html += `<p>${text}</p>`;
                 }
             });
         }
@@ -177,6 +180,17 @@ async function getComponent(data: any, key: number) {
                 })
             }
             return <LocationGrid key={key} {...props} />
+
+        case "component.office-card-row":
+            props = {
+                title: data.title,
+                leftContent: getRichText(data.leftContent) ?? "",
+                rightContent: getRichText(data.rightContent) ?? "",
+                location: getImg(data.location) ?? "",
+                reverse: data.reverse
+            }
+
+            return <OfficeCardsRow key={key} {...props} />
             
         default:
             return null;
