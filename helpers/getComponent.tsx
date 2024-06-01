@@ -1,5 +1,6 @@
 import AboutBlock from "@/components/about-block/AboutBlock";
 import CardList from "@/components/card-list/CardList";
+import ContactForm from "@/components/contact-form/ContactForm";
 import GalleryGrid from "@/components/gallery-grid/GalleryGrid";
 import HeroBlock from "@/components/hero-block/HeroBlock";
 import ImgCard from "@/components/img-card/ImgCard";
@@ -196,6 +197,9 @@ async function getComponent(data: any, key: number) {
             }
 
             return <OfficeCardsRow key={key} {...props} />
+        
+        case "collections.contact-form":
+            return <ContactForm key={key} />
             
         default:
             return null;

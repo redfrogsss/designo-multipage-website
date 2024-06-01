@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import FadeInBottom from "../utils/FadeInBottom"
+import { createContactEntry } from "@/app/actions/createContactEntry"
 
 const formSchema = z.object({
     name: z.string().min(2).max(50),
@@ -37,8 +38,18 @@ export default function ContactForm() {
         },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        alert(`Your message is successfully sent.\n ${JSON.stringify(values)}`);
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const res = await createContactEntry(values);
+
+            if (res.success) {
+                alert("Your message has been sent successfully.");
+            } else {
+                throw new Error("There was an error sending your message. Please try again later.");
+            }
+        } catch (error) {
+            alert("There was an error sending your message. Please try again later.");
+        }
     }
 
     return (
