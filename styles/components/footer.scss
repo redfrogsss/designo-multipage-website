@@ -1,6 +1,11 @@
 @use 'sass:math';
 
 .footer {
+
+    &:not(.footer__top) {
+        @extend .component-gap;
+    }
+
     &__top {
         position: relative;
         z-index: 1;
@@ -115,7 +120,7 @@
         padding-block: rem(64);
     }
 
-    .footer:not(.component-gap) & {
+    .footer:has(.footer__top) & {
         padding-top: rem(144);
         margin-top: rem(-72);
     }

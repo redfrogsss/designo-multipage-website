@@ -5,27 +5,31 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "./NavBarMobileDropdown"
+import { getSiteSetting } from "@/helpers/getSiteSetting";
 
-export default function NavBar() {
+export default async function NavBar() {
+
+    const siteSetting = await getSiteSetting();
+
     return (
         <header className="navbar">
             <div className="page-container">
                 <div className="navbar__inner">
                     <a href="/" className="navbar__left">
                         <picture className="navbar__pic">
-                            <img src="/assets/shared/desktop/logo-dark.png" alt="DESIGNO Logo" className="navbar__img" />
+                            <img src={siteSetting.siteLogo} alt={siteSetting.sitename} className="navbar__img" />
                         </picture>
                     </a>
                     <div className="navbar__right">
-                        <Link href="/about" className="navbar__link navbar__link--desktop">Our Company</Link>
-                        <Link href="/location" className="navbar__link navbar__link--desktop">Location</Link>
-                        <Link href="/contact" className="navbar__link navbar__link--desktop">Contact</Link>
+                        {siteSetting.menuItem.map((item: any, index: any) => (
+                            <Link key={index} href={item.path} className="navbar__link navbar__link--desktop">{item.title}</Link>
+                        ))}
                         <DropdownMenu>
                             <DropdownMenuTrigger className="navbar__link navbar__link--mobile navbar__link--icon"><span className="icon-icon-hamburger"></span></DropdownMenuTrigger>
                             <DropdownMenuContent className="navbar__dropdown">
-                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/about"><span>Our Company</span></Link></DropdownMenuItem>
-                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/location"><span>Locations</span></Link></DropdownMenuItem>
-                                <DropdownMenuItem className="navbar__dropdown-item"><Link href="/contact"><span>Contact</span></Link></DropdownMenuItem>
+                                {siteSetting.menuItem.map((item: any, index: any) => (
+                                    <DropdownMenuItem key={index} className="navbar__dropdown-item"><Link href={item.path}><span>{item.title}</span></Link></DropdownMenuItem>
+                                ))}
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>

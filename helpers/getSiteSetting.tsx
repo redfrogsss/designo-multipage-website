@@ -5,6 +5,9 @@ import SiteSetting from "@/app/type/SiteSetting";
 async function getSiteSetting() {
     try {
         const res = await fetch(`${process.env.cms_path}site-setting?populate=deep`);
+
+        if (!res.ok) throw new Error("Failed to fetch site setting");
+        
         const json = await res.json();
 
         const setting: SiteSetting = {
