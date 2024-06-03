@@ -234,7 +234,7 @@
         font-size: rem(16);
         line-height: math.div(26, 16);
 
-        & strong {
+        & strong, & b {
             font-weight: 700;
         }
     }
