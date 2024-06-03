@@ -30,6 +30,13 @@ async function getSiteSetting() {
             twitter: json.data.attributes.twitter,
             pinterest: json.data.attributes.pinterest,
             instagram: json.data.attributes.instagram,
+
+            footerBlock: {
+                title: json.data.attributes.footerBlock.title,
+                desc: json.data.attributes.footerBlock.desc,
+                btnText: json.data.attributes.footerBlock.btnText,
+                btnPath: json.data.attributes.footerBlock.page.data.attributes.path,
+            }
         }
 
         return setting;
