@@ -3,6 +3,7 @@ import { Jost } from "next/font/google";
 import "./../styles/globals.scss";
 import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/footer/Footer";
+import GoogleAnalytics from "@/components/google-analytics/GoogleAnalytics";
 
 const jost = Jost({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={jost.className}>
         <NavBar />
         {children}
