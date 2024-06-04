@@ -3,7 +3,7 @@
 import useFadeInBottom from "@/hooks/useFadeInBottom";
 import React, { Children, cloneElement, isValidElement } from "react";
 
-export default function FadeInBottom({ children, triggerPoint = "-20%", extraClassName = "" }: { children?: React.ReactNode, triggerPoint?: string, extraClassName?: string }) {
+export default function FadeInBottom({ children, triggerPoint = "-10%", extraClassName = "" }: { children?: React.ReactNode, triggerPoint?: string, extraClassName?: string }) {
     const { ref, isIntersecting } = useFadeInBottom(triggerPoint);
 
     return (
