@@ -24,3 +24,5 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: pageTitle,
     }
 }
+
+export const runtime = 'edge';
