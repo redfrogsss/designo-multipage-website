@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     const siteSetting = await getSiteSetting();
 
-    const pageTitle = pageData.title + " | " + siteSetting.sitename;
+    const pageTitle = pageData.title + " | " + siteSetting?.sitename ?? "";
 
     return {
         title: pageTitle,

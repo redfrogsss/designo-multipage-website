@@ -9,10 +9,10 @@ export default async function Footer () {
     return (
         <footer className="footer">
             <FooterBlock 
-                title={siteSetting.footerBlock.title}
-                desc={siteSetting.footerBlock.desc}
-                btnText={siteSetting.footerBlock.btnText}
-                btnPath={siteSetting.footerBlock.btnPath}
+                title={siteSetting?.footerBlock.title}
+                desc={siteSetting?.footerBlock.desc}
+                btnText={siteSetting?.footerBlock.btnText}
+                btnPath={siteSetting?.footerBlock.btnPath}
             />
             <div className="footer__bottom">
                 <FooterSection />

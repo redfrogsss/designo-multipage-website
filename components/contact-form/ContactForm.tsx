@@ -40,7 +40,7 @@ export default function ContactForm() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            const res = await createContactEntry(values);
+            const res: any = await createContactEntry(values);
 
             if (res.success) {
                 alert("Your message has been sent successfully.");

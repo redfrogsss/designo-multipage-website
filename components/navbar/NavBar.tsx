@@ -17,17 +17,17 @@ export default async function NavBar() {
                 <div className="navbar__inner">
                     <a href="/" className="navbar__left">
                         <picture className="navbar__pic">
-                            <img src={siteSetting.siteLogo} alt={siteSetting.sitename} className="navbar__img" />
+                            <img src={siteSetting?.siteLogo} alt={siteSetting?.sitename} className="navbar__img" />
                         </picture>
                     </a>
                     <div className="navbar__right">
-                        {siteSetting.menuItem.map((item: any, index: any) => (
+                        {siteSetting?.menuItem.map((item: any, index: any) => (
                             <Link key={index} href={item.path} className="navbar__link navbar__link--desktop">{item.title}</Link>
                         ))}
                         <DropdownMenu>
                             <DropdownMenuTrigger className="navbar__link navbar__link--mobile navbar__link--icon"><span className="icon-icon-hamburger"></span></DropdownMenuTrigger>
                             <DropdownMenuContent className="navbar__dropdown">
-                                {siteSetting.menuItem.map((item: any, index: any) => (
+                                {siteSetting?.menuItem.map((item: any, index: any) => (
                                     <DropdownMenuItem key={index} className="navbar__dropdown-item"><Link href={item.path}><span>{item.title}</span></Link></DropdownMenuItem>
                                 ))}
                             </DropdownMenuContent>

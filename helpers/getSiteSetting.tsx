@@ -1,6 +1,5 @@
 import { getImg } from "./getImg";
 import { getRichText } from "./getRichText";
-import SiteSetting from "@/app/type/SiteSetting";
 
 async function getSiteSetting() {
     try {
@@ -10,7 +9,7 @@ async function getSiteSetting() {
         
         const json = await res.json();
 
-        const setting: SiteSetting = {
+        const setting = {
             sitename: json.data.attributes.sitename,
             siteDesc: json.data.attributes.siteDesc,
             leftContent: getRichText(json.data.attributes.leftContent) ?? "",

@@ -25,7 +25,7 @@ async function getComponent(data: any, key: number) {
                 btnText: data.btn_text,
                 btnHref: data.btn_href.data?.attributes.path ?? ""
             }
-            return <HeroBlock key={key} {...props} />;
+            return <HeroBlock {...props as any} />;
 
         case "component.gallery-grid":
             props = {
@@ -39,7 +39,7 @@ async function getComponent(data: any, key: number) {
                     }
                 })
             }
-            return <GalleryGrid key={key} {...props} />
+            return <GalleryGrid {...props as any} />
 
         case "component.terms-grid":
             props = {
@@ -52,14 +52,14 @@ async function getComponent(data: any, key: number) {
                 })
             }
 
-            return <TermsGrid key={key} {...props} />
+            return <TermsGrid key={key} {...props as any} />
 
         case "component.section-header":
             props = {
                 title: data.title,
                 desc: data.desc
             }
-            return <SectionHeader key={key} {...props} />
+            return <SectionHeader key={key} {...props as any} />
 
         case "component.about-block":
             props = {
@@ -69,7 +69,7 @@ async function getComponent(data: any, key: number) {
                 tabletImg: getImg(data.tabletImg) ?? "",
                 mobileImg: getImg(data.mobileImg) ?? ""
             }
-            return <AboutBlock key={key} {...props} />
+            return <AboutBlock key={key} {...props as any} />
             
         case "collections.web-design":
             if (data.enable == false) return null;
@@ -87,7 +87,7 @@ async function getComponent(data: any, key: number) {
                 })
             };
 
-            return <CardList key={key} {...props}/>
+            return <CardList key={key} {...props as any}/>
             
         case "collections.app-design":
             if (data.enable == false) return null;
@@ -105,7 +105,7 @@ async function getComponent(data: any, key: number) {
                 })
             };
 
-            return <CardList key={key} {...props}/>
+            return <CardList key={key} {...props as any}/>
             
         case "collections.graphic-design":
             if (data.enable == false) return null;
@@ -123,7 +123,7 @@ async function getComponent(data: any, key: number) {
                 })
             };
 
-            return <CardList key={key} {...props}/>
+            return <CardList key={key} {...props as any}/>
         
         case "component.image-card":
             props = {
@@ -134,7 +134,7 @@ async function getComponent(data: any, key: number) {
                 mobileImg: getImg(data.mobileImg) ?? undefined,
                 reverse: data.reverse
             }
-            return <ImgCard key={key} {...props} />
+            return <ImgCard key={key} {...props as any} />
             
         case "component.location-grid":
             props = {
@@ -147,7 +147,7 @@ async function getComponent(data: any, key: number) {
                     }
                 })
             }
-            return <LocationGrid key={key} {...props} />
+            return <LocationGrid key={key} {...props as any} />
 
         case "component.office-card-row":
             props = {
@@ -158,7 +158,7 @@ async function getComponent(data: any, key: number) {
                 reverse: data.reverse
             }
 
-            return <OfficeCardsRow key={key} {...props} />
+            return <OfficeCardsRow key={key} {...props as any} />
         
         case "collections.contact-form":
             return <ContactForm key={key} />
