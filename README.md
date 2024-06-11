@@ -1,6 +1,10 @@
 [![wakatime](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/153b6d55-e088-43d7-ac3c-b0562ba961d0.svg)](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/153b6d55-e088-43d7-ac3c-b0562ba961d0)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a multi-page website built with Next.js, TypeScript and integrated with Strapi CMS. It is part of a code challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT).
+
+This repo is the frontend part of the project. The backend part is in [this repo](https://github.com/redfrogsss/designo-multipage-website-backend).
+
+![Design preview for the Manage landing page coding challenge](./readme-img/01.png)
 
 ## Getting Started
 
@@ -31,8 +35,25 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Home
+![Design preview for the Manage landing page coding challenge](./readme-img/home.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### About
+![Design preview for the Manage landing page coding challenge](./readme-img/about-us.png)
+
+### Locations
+![Design preview for the Manage landing page coding challenge](./readme-img/locations.png)
+
+### Contact
+![Design preview for the Manage landing page coding challenge](./readme-img/contact.png)
+
+## Web Design
+![Design preview for the Manage landing page coding challenge](./readme-img/web-design.png)
+
+## App Design
+![Design preview for the Manage landing page coding challenge](./readme-img/app-design.png)
+
+## Graphic Design
+![Design preview for the Manage landing page coding challenge](./readme-img/graphic-design.png)
