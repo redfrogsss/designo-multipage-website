@@ -1,6 +1,6 @@
 [![wakatime](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/153b6d55-e088-43d7-ac3c-b0562ba961d0.svg)](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/153b6d55-e088-43d7-ac3c-b0562ba961d0)
 
-This is a multi-page website built with Next.js, TypeScript and integrated with Strapi CMS. It is part of a code challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT).
+This is a multi-page website built with Next.js, TypeScript, SASS and integrated with Strapi CMS. It is part of a code challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT).
 
 This repo is the frontend part of the project. The backend part is in [this repo](https://github.com/redfrogsss/designo-multipage-website-backend).
 
